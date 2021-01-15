@@ -1,0 +1,48 @@
+.page {
+  & > div[class*='ant-tabs-content'] {
+    padding: 0;
+    background-color: transparent;
+  }
+  & > div[class*='ant-tabs-bar'] {
+    margin: 0;
+  }
+}
+
+//main
+.tabPage {
+  & > div {
+    // & > div[class*='ant-pro-page-header-wrap'] {
+    //   margin: 0 !important;
+    // }
+    & > div {
+      & > div[class*='ant-pro-grid-content'] {
+        & > div[class*='ant-pro-page-header-wrap-children-content'] {
+          margin: 10px 0 !important;
+        }
+      }
+    }
+    & > div[class*='ant-spin-nested-loading'] {
+      height: 100%;
+      & > div[class*='ant-spin-container'] {
+        height: 100%;
+        & > iframe {
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+:global {
+  .ant-pro-basicLayout-content {
+    margin: 16px;
+  }
+  .ant-pro-page-container {
+    margin: -16px 0px 0 !important;
+  }
+  .ant-pro-page-container-children-content {
+    margin: 16px 0px 0;
+  }
+  
+}
