@@ -21,7 +21,7 @@ export const getTabsComponent = (key) => {
 
 
 
-// import React from "react";
+// import React, { Suspense, lazy } from "react";
 
 // const Welcome = lazy(() => import('@/pages/Welcome'));
 // const TableList = lazy(() => import('@/pages/TableList'));
@@ -38,10 +38,10 @@ export const getTabsComponent = (key) => {
 //       childView = <TableList />
 //     case '/add':
 //       childView = <Add />
-//     case '/not-found':
-//       childView = <NotFound />
-//     default:
-//       childView = <NotFound />
+//     // case '/not-found':
+//     //   childView = <NotFound />
+//     // default:
+//     //   childView = <NotFound />
 //   }
 //   return <Suspense fallback={<div>Loading...</div>}>
 //     {childView}
