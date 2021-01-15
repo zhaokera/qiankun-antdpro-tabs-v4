@@ -157,7 +157,7 @@ class App extends Component {
     const { pathname, pageName } = tabs;
     const { pages } = this.state;
     const myPage = Object.assign([], pages);
-    // 如果是新开标签页，push到tabs标签页数组中，并设置当前激活页面
+    // 新页面新增数组
     if (pathname !== '/' && !pages.some((page) => page.key === pathname)) {
       myPage.push({ key: pathname, title: pageName, content: this.getComponentByKey(pathname) });
     }
@@ -169,7 +169,7 @@ class App extends Component {
 
     this.setState({
       pages: myPage,
-      // activeKey: pathname,
+      activeKey: pathname,
       keys,
     });
   };
@@ -240,11 +240,9 @@ class App extends Component {
 
   render() {
     const { pages = [], activeKey, keys } = this.state;
-    debugger;
-    const { tabs } = this.props;
     return (
       <div>
-        <Tabs
+        <DraggableTabs
           className={`page-tab ${pageTabStyle.page}`}
           hideAdd
           activeKey={activeKey}
@@ -255,7 +253,6 @@ class App extends Component {
           }}
         >
           {pages.map((pane) => {
-            debugger;
             return (
               <TabPane
                 className={`${pageTabStyle.tabPage}`}
@@ -292,7 +289,7 @@ class App extends Component {
               </TabPane>
             );
           })}
-        </Tabs>
+        </DraggableTabs>
       </div>
     );
   }

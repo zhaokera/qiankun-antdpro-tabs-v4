@@ -50,7 +50,6 @@ const GlobalModel = {
         const { title } = get(id, 'sessionstorage') || {};
         let name = '';
         name = pathname.substr(pathname.lastIndexOf('/') + 1);
-
         const pageName = getName(routeArray, pathname)[0] || title || name || '新标签页';
         dispatch({ type: 'setCurrentPath', payload: { pathname, pageName: title || pageName } });
       });
