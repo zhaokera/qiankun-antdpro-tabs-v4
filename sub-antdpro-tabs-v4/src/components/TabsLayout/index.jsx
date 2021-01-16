@@ -13,9 +13,7 @@ import { message, Tabs, Menu, Dropdown, Tooltip, Icon } from 'antd';
 import { getTabsComponent } from './Config'
 import DraggableTabs from './DraggableTabs';
 import pageTabStyle from './index.less';
-import Welcome from '@/pages/Welcome';
-import TableList from '@/pages/TableList';
-import Add from '@/pages/Add';
+
 
 const { TabPane } = Tabs;
 const TABS_NOT_TIPS = 'TABS_NOT_TIPS';
@@ -138,20 +136,6 @@ class App extends Component {
       this.getData();
     }
   }
-
-  getComponentByKey = (pathname) => {
-    switch (pathname) {
-      case '/welcome':
-        return <Welcome />;
-        break;
-      case '/list':
-        return <TableList />;
-        break;
-      case '/add':
-        return <Add />;
-        break;
-    }
-  };
 
   getData = () => {
     const { tabs, children } = this.props;
