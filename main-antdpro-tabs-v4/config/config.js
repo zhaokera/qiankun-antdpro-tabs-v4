@@ -40,4 +40,15 @@ export default defineConfig({
     basePath: '/',
   },
   esbuild: {},
+  mountElementId: 'root-master',
+  qiankun: {
+    master: {
+      apps: [
+        {
+          name: 'app1',
+          entry: '//localhost:8001',
+        },
+      ],
+    },
+  },
 });

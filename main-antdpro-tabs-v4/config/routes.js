@@ -29,7 +29,7 @@ export default [
               },
               {
                 path: '/welcome',
-                name: 'welcome',
+                name: '欢迎',
                 icon: 'smile',
                 component: './Welcome',
               },
@@ -42,7 +42,7 @@ export default [
                 routes: [
                   {
                     path: '/admin/sub-page',
-                    name: 'sub-page',
+                    name: '欢迎',
                     icon: 'smile',
                     component: './Welcome',
                     authority: ['admin'],
@@ -50,10 +50,15 @@ export default [
                 ],
               },
               {
-                name: 'list.table-list',
+                name: '列表',
                 icon: 'table',
                 path: '/list',
                 component: './TableList',
+              },
+              {
+                name: 'App1',
+                path: '/app1',
+                microApp: 'app1',
               },
               {
                 component: './404',

@@ -25,12 +25,12 @@ const noMatch = (
     }
   />
 );
-
 /**
  * use Authorized check all menu item
  */
-const menuDataRender = menuList =>
-  menuList.map(item => {
+
+const menuDataRender = (menuList) =>
+  menuList.map((item) => {
     const localItem = {
       ...item,
       children: item.children ? menuDataRender(item.children) : undefined,
@@ -64,7 +64,7 @@ const defaultFooterDom = (
   />
 );
 
-const BasicLayout = props => {
+const BasicLayout = (props) => {
   const {
     dispatch,
     children,
@@ -85,7 +85,7 @@ const BasicLayout = props => {
    * init variables
    */
 
-  const handleMenuCollapse = payload => {
+  const handleMenuCollapse = (payload) => {
     if (dispatch) {
       dispatch({
         type: 'global/changeLayoutCollapsed',
@@ -101,11 +101,10 @@ const BasicLayout = props => {
       },
     [location.pathname],
   );
-  const { formatMessage } = useIntl();
+  const {} = useIntl();
   return (
     <ProLayout
       logo={logo}
-      formatMessage={formatMessage}
       {...props}
       {...settings}
       onCollapse={handleMenuCollapse}
@@ -124,9 +123,7 @@ const BasicLayout = props => {
       breadcrumbRender={(routers = []) => [
         {
           path: '/',
-          breadcrumbName: formatMessage({
-            id: 'menu.home',
-          }),
+          breadcrumbName: '首页',
         },
         ...routers,
       ]}
@@ -141,7 +138,7 @@ const BasicLayout = props => {
       footerRender={() => defaultFooterDom}
       menuDataRender={menuDataRender}
       rightContentRender={() => <RightContent />}
-      postMenuData={menuData => {
+      postMenuData={(menuData) => {
         menuDataRef.current = menuData || [];
         return menuData || [];
       }}
