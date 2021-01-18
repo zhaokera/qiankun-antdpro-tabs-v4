@@ -145,6 +145,9 @@ class App extends Component {
     // 新页面新增数组
     if (pathname !== '/' && !pages.some((page) => page.key === pathname)) {
       myPage.push({ key: pathname, title: pageName, content: getTabsComponent(pathname) });
+    } else if(pathname === '/') {
+      history.push('/welcome')
+      return
     }
     const keys = {};
     myPage.forEach((item) => {

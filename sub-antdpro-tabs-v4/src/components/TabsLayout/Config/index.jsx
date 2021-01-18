@@ -1,10 +1,14 @@
 import Loadable from 'react-loadable';
 import React from 'react';
 
-
-const Loading = () => (<span>Loading...</span>);
+const Loading = () => <span>Loading...</span>;
+const NotFound = Loadable({ loader: () => import('@/pages/404'), loading: Loading, delay: 150 });
 const Welcome = Loadable({ loader: () => import('@/pages/Welcome'), loading: Loading, delay: 150 });
-const TableList = Loadable({ loader: () => import('@/pages/TableList'), loading: Loading, delay: 150 });
+const TableList = Loadable({
+  loader: () => import('@/pages/TableList'),
+  loading: Loading,
+  delay: 150,
+});
 const Add = Loadable({ loader: () => import('@/pages/Add'), loading: Loading, delay: 150 });
 
 export const getTabsComponent = (key) => {
@@ -15,6 +19,8 @@ export const getTabsComponent = (key) => {
       return <TableList />;
     case '/add':
       return <Add />;
+    default:
+      return <NotFound />;
   }
 };
 
