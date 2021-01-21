@@ -7,12 +7,7 @@ import { useIntl } from 'umi';
 export default () => {
   const intl = useIntl();
   return (
-    <PageHeaderWrapper
-      content={intl.formatMessage({
-        id: 'pages.admin.subPage.title',
-        defaultMessage: ' 这个页面只有 admin 权限才能查看',
-      })}
-    >
+    <PageHeaderWrapper content=" 这个页面只有 admin 权限才能查看">
       <Card>
         <Alert
           message={intl.formatMessage({

@@ -8,6 +8,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import { Link, useIntl, connect, history } from 'umi';
 import { GithubOutlined } from '@ant-design/icons';
 import { Result, Button } from 'antd';
+import TabsLayout from '@/components/TabsLayout';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
 import { getMatchMenu } from '@umijs/route-utils';
@@ -144,7 +145,7 @@ const BasicLayout = (props) => {
       }}
     >
       <Authorized authority={authorized.authority} noMatch={noMatch}>
-        {children}
+        <TabsLayout>{children}</TabsLayout>
       </Authorized>
     </ProLayout>
   );

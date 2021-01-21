@@ -42,13 +42,14 @@ export default defineConfig({
   esbuild: {},
   mountElementId: 'root-master',
   qiankun: {
-    master: {
-      apps: [
-        {
-          name: 'app1',
-          entry: '//localhost:8001',
-        },
-      ],
-    },
+    // master: {
+      //   apps: [
+      //     {
+      //       name: 'app1',
+      //       entry: '//localhost:8001',
+      //       container: '#appContainer1',
+      //     },
+      //   ],
+    // },
   },
 });
