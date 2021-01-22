@@ -1,5 +1,30 @@
 import React, { Component } from 'react';
 import { loadMicroApp } from 'qiankun';
+
+class MicroApp extends React.Component {
+  containerRef = React.createRef();
+  microApp = null;
+  componentDidMount() {
+    this.microApp = loadMicroApp({
+      name: 'app1',
+      entry: '//localhost:8001',
+      container: this.containerRef.current,
+      props: { name: 'qiankun' },
+    });
+  }
+  componentWillUnmount() {
+    this.microApp.unmount();
+  }
+  componentDidUpdate() {
+    this.microApp.update({ name: 'app1' });
+  }
+  render() {
+    return <div ref={this.containerRef}></div>;
+  }
+}
+export default MicroApp;
+
+
 // import { useMount, useUnmount } from "@umijs/hooks";
 // import { customAlphabet } from "nanoid";
 
@@ -55,30 +80,3 @@ import { loadMicroApp } from 'qiankun';
 //     return <div id="appContainer1" />;
 //   }
 // }
-
-// export default MicroApp;
-
-// import { loadMicroApp } from 'qiankun';
-// import React from 'react';
-class MicroApp extends React.Component {
-  containerRef = React.createRef();
-  microApp = null;
-  componentDidMount() {
-    this.microApp = loadMicroApp({
-      name: 'app1',
-      entry: '//localhost:8001',
-      container: this.containerRef.current,
-      props: { name: 'qiankun' },
-    });
-  }
-  componentWillUnmount() {
-    this.microApp.unmount();
-  }
-  componentDidUpdate() {
-    this.microApp.update({ name: 'kuitos' });
-  }
-  render() {
-    return <div ref={this.containerRef}></div>;
-  }
-}
-export default MicroApp;

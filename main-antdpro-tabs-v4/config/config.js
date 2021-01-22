@@ -39,6 +39,7 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
+  base: '/',
   esbuild: {},
   mountElementId: 'root-master',
   qiankun: {

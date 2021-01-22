@@ -56,8 +56,13 @@ export default [
                 component: './TableList',
               },
               {
-                name: 'App1',
-                path: '/app1',
+                name: 'App1列表',
+                path: '/app1/list',
+                microApp: 'app1',
+              },
+              {
+                name: 'App1新增',
+                path: '/app1/add',
                 microApp: 'app1',
               },
               {
