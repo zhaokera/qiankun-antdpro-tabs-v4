@@ -44,13 +44,13 @@ export default defineConfig({
   mountElementId: 'root-master',
   qiankun: {
     // master: {
-      //   apps: [
-      //     {
-      //       name: 'app1',
-      //       entry: '//localhost:8001',
-      //       container: '#appContainer1',
-      //     },
-      //   ],
+    //   apps: [
+    //     {
+    //       name: 'app2',
+    //       entry: '//localhost:8002',
+    //       container: '#app2',
+    //     },
+    //   ],
     // },
   },
 });

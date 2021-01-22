@@ -10,15 +10,14 @@ import { connect } from 'dva';
 import { history } from 'umi';
 import React, { Component } from 'react';
 import { message, Tabs, Menu, Dropdown, Tooltip, Icon } from 'antd';
-import { getTabsComponent } from './Config'
+import { getTabsComponent } from './Config';
 import DraggableTabs from './DraggableTabs';
 import pageTabStyle from './index.less';
-
 
 const { TabPane } = Tabs;
 const TABS_NOT_TIPS = 'TABS_NOT_TIPS';
 
-const getTitle = (cb = () => { }) => {
+const getTitle = (cb = () => {}) => {
   return localStorage.getItem(TABS_NOT_TIPS) ? undefined : (
     <div style={{ fontSize: 14, width: 380 }}>
       <div>1、点击鼠标右键可以操作标签页面；</div>
@@ -41,7 +40,7 @@ const getTitle = (cb = () => { }) => {
 };
 
 const menu = (obj) => {
-  const { pane = {}, pages = [], reflash = () => { }, closeOhterTabs = () => { } } = obj;
+  const { pane = {}, pages = [], reflash = () => {}, closeOhterTabs = () => {} } = obj;
   const { key, title } = pane;
   let leftDisabled = false;
   let rightDisabled = false;
@@ -145,9 +144,9 @@ class App extends Component {
     // 新页面新增数组
     if (pathname !== '/' && !pages.some((page) => page.key === pathname)) {
       myPage.push({ key: pathname, title: pageName, content: getTabsComponent(pathname) });
-    } else if(pathname === '/') {
-      history.push('/welcome')
-      return
+    } else if (pathname === '/') {
+      history.push('/welcome');
+      return;
     }
     const keys = {};
     myPage.forEach((item) => {

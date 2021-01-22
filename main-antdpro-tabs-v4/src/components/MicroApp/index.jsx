@@ -13,10 +13,10 @@ class MicroApp extends React.Component {
     });
   }
   componentWillUnmount() {
-    this.microApp.unmount();
+    // this.microApp.unmount();
   }
   componentDidUpdate() {
-    this.microApp.update({ name: 'app1' });
+    // this.microApp.update({ name: 'app1' });
   }
   render() {
     return <div ref={this.containerRef}></div>;

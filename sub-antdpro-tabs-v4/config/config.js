@@ -39,7 +39,7 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
-  mountElementId: 'root',
+  mountElementId: 'root-app1',
   qiankun: {
     slave: {},
   },

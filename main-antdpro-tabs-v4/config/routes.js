@@ -66,6 +66,11 @@ export default [
                 microApp: 'app1',
               },
               {
+                name: 'App2',
+                path: '/app2',
+                microApp: 'app2',
+              },
+              {
                 component: './404',
               },
             ],
