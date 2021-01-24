@@ -67,7 +67,12 @@ export default [
               },
               {
                 name: 'App2',
-                path: '/app2',
+                path: '/app2/index',
+                microApp: 'app2',
+              },
+              {
+                name: 'App2',
+                path: '/app2/add',
                 microApp: 'app2',
               },
               {

@@ -10,6 +10,9 @@ class MicroApp extends React.Component {
       entry: '//localhost:8001',
       container: this.containerRef.current,
       props: { name: 'qiankun' },
+    }, {
+      sandbox: { strictStyleIsolation: true },
+      singular: false
     });
   }
   componentWillUnmount() {
