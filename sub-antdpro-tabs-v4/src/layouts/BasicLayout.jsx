@@ -103,50 +103,51 @@ const BasicLayout = (props) => {
     [location.pathname],
   );
   return (
-    <ProLayout
-      logo={logo}
-      {...props}
-      {...settings}
-      onCollapse={handleMenuCollapse}
-      onMenuHeaderClick={() => history.push('/')}
-      menuItemRender={(menuItemProps, defaultDom) => {
-        if (
-          menuItemProps.isUrl ||
-          !menuItemProps.path ||
-          location.pathname === menuItemProps.path
-        ) {
-          return defaultDom;
-        }
+    // <ProLayout
+    //   logo={logo}
+    //   {...props}
+    //   {...settings}
+    //   onCollapse={handleMenuCollapse}
+    //   onMenuHeaderClick={() => history.push('/')}
+    //   menuItemRender={(menuItemProps, defaultDom) => {
+    //     if (
+    //       menuItemProps.isUrl ||
+    //       !menuItemProps.path ||
+    //       location.pathname === menuItemProps.path
+    //     ) {
+    //       return defaultDom;
+    //     }
 
-        return <Link to={menuItemProps.path}>{defaultDom}</Link>;
-      }}
-      breadcrumbRender={(routers = []) => [
-        {
-          path: '/',
-          breadcrumbName: '首页',
-        },
-        ...routers,
-      ]}
-      itemRender={(route, params, routes, paths) => {
-        const first = routes.indexOf(route) === 0;
-        return first ? (
-          <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
-        ) : (
-          <span>{route.breadcrumbName}</span>
-        );
-      }}
-      footerRender={() => defaultFooterDom}
-      menuDataRender={menuDataRender}
-      rightContentRender={() => <RightContent />}
-      postMenuData={(menuData) => {
-        menuDataRef.current = menuData || [];
-        return menuData || [];
-      }}
-    >
-      <Authorized authority={authorized.authority} noMatch={noMatch}>
-        <TabsLayout>{children}</TabsLayout>
-      </Authorized>
-    </ProLayout>
+    //     return <Link to={menuItemProps.path}>{defaultDom}</Link>;
+    //   }}
+    //   breadcrumbRender={(routers = []) => [
+    //     {
+    //       path: '/',
+    //       breadcrumbName: '首页',
+    //     },
+    //     ...routers,
+    //   ]}
+    //   itemRender={(route, params, routes, paths) => {
+    //     const first = routes.indexOf(route) === 0;
+    //     return first ? (
+    //       <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
+    //     ) : (
+    //       <span>{route.breadcrumbName}</span>
+    //     );
+    //   }}
+    //   footerRender={() => defaultFooterDom}
+    //   menuDataRender={menuDataRender}
+    //   rightContentRender={() => <RightContent />}
+    //   postMenuData={(menuData) => {
+    //     menuDataRef.current = menuData || [];
+    //     return menuData || [];
+    //   }}
+    // >
+    <Authorized authority={authorized.authority} noMatch={noMatch}>
+      {children}
+      {/* <TabsLayout>{children}</TabsLayout> */}
+    </Authorized>
+    // </ProLayout>
   );
 };
 

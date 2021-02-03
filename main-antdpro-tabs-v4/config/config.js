@@ -39,16 +39,18 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
+  base: '/',
   esbuild: {},
   mountElementId: 'root-master',
   qiankun: {
-    master: {
-      apps: [
-        {
-          name: 'app1',
-          entry: '//localhost:8001',
-        },
-      ],
-    },
+    // master: {
+    //   apps: [
+    //     {
+    //       name: 'app2',
+    //       entry: '//localhost:8002',
+    //       container: '#app2',
+    //     },
+    //   ],
+    // },
   },
 });

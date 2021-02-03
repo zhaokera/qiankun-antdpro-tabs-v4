@@ -7,9 +7,7 @@ import { useIntl } from 'umi';
 export default () => {
   const intl = useIntl();
   return (
-    <PageHeaderWrapper
-      content="这个页面只有 admin 权限才能查看"
-    >
+    <PageHeaderWrapper content=" 这个页面只有 admin 权限才能查看">
       <Card>
         <Alert
           message="更快更强的重型组件，已经发布。"
